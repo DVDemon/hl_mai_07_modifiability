@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(hl_mai_01_modifiablity)
+project(hl_mai_07_modifiablity)
 
 add_executable(srp_1 srp_1.cpp)
 set_target_properties(srp_1 PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
@@ -19,8 +19,12 @@ set_target_properties(ocp_1 PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
 
 add_executable(ocp_2_template ocp_2_template.cpp)
 set_target_properties(ocp_2_template PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
 add_executable(ocp_3_crtp ocp_3_crtp.cpp)
 set_target_properties(ocp_3_crtp PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
+add_executable(ocp_4_strategy ocp_4_strategy.cpp)
+set_target_properties(ocp_4_strategy PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
 
 add_executable(lsp_1 lsp_1.cpp)
 set_target_properties(lsp_1 PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)

@@ -4,7 +4,6 @@
 #include <vector>
 
 class ConnectionEnded{
-    
 };
 
 class Modem {
@@ -15,7 +14,6 @@ protected:
 public:
 
     Modem() : connected(false), number("") {
-
     }
 
     bool Deal(const char* value) {

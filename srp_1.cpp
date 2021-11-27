@@ -10,7 +10,6 @@ protected:
 public:
 
     Modem() : connected(false), number("") {
-
     }
 
     bool Deal(const char* value) {
@@ -46,9 +45,7 @@ public:
 };
 
 auto main() -> int {
-
     Modem modem;
-
     modem.Deal("8-800-1234567");
 
     if (!modem.Connected()) {
