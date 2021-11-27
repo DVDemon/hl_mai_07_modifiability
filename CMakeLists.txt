@@ -49,3 +49,15 @@ set_target_properties(dip_1 PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
 
 add_executable(dip_2 dip_2.cpp)
 set_target_properties(dip_2 PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
+add_executable(grasp_ia grasp_ia.cpp)
+set_target_properties(grasp_ia PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
+add_executable(grasp_ia_fix grasp_ia_fix.cpp)
+set_target_properties(grasp_ia_fix PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
+add_executable(grasp_creator grasp_creator.cpp)
+set_target_properties(grasp_creator PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
+
+add_executable(grasp_controller grasp_controller.cpp)
+set_target_properties(grasp_controller PROPERTIES CXX_STANDARD 14 CXX_STANDARD_REQUIRED ON)
