@@ -1,35 +1,38 @@
 #include <iostream>
 #include <string>
 
-template <class T> class Mailer {
+template <class T>
+class Mailer
+{
 protected:
     std::string from;
     std::string to;
     std::string msg;
-public:
 
-    Mailer(const char* from_cs, const char* to_cs, const char *msg_cs) :
-    from(from_cs), to(to_cs), msg(msg_cs) {
+public:
+    Mailer(const char *from_cs, const char *to_cs, const char *msg_cs) : from(from_cs), to(to_cs), msg(msg_cs)
+    {
     }
 
     // template method
 
-    const char* ComposeMail() {
+    const char *ComposeMail()
+    {
         static std::string mail;
 
-        mail = ((T*)this)->Greeting();
+        mail = ((T *)this)->Greeting();
         mail += msg;
-        mail += ((T*)this)->Sign();
+        mail += ((T *)this)->Sign();
 
         return mail.c_str();
     }
-
 };
 
-class WorkMail : public Mailer<WorkMail> {
+class WorkMail : public Mailer<WorkMail>
+{
 protected:
-
-    const char* Greeting() {
+    const char *Greeting()
+    {
         static std::string value;
         value = "Dear ";
         value += to;
@@ -40,33 +43,36 @@ protected:
         ;
     }
 
-    const char* Sign() {
+    const char *Sign()
+    {
         static std::string value;
         value = "\nWith best regards,";
         value += from;
         value += "\n\n";
 
         return value.c_str();
-        
     }
     friend class Mailer<WorkMail>;
-public:
 
-    WorkMail(const char* from, const char*to, const char *msg) : Mailer<WorkMail>(from, to, msg) {
+public:
+    WorkMail(const char *from, const char *to, const char *msg) : Mailer<WorkMail>(from, to, msg)
+    {
     }
 };
 
-class JokeMail : public Mailer<JokeMail> {
+class JokeMail : public Mailer<JokeMail>
+{
 protected:
-
-    const char* Greeting() {
+    const char *Greeting()
+    {
         static std::string value;
         value = "Hi there!\n";
         return value.c_str();
         ;
     }
 
-    const char* Sign() {
+    const char *Sign()
+    {
         static std::string value;
         value = "\nSee you later, ";
         value += to;
@@ -76,13 +82,15 @@ protected:
         ;
     }
     friend class Mailer<JokeMail>;
-public:
 
-    JokeMail(const char* from, const char*to, const char *msg) : Mailer<JokeMail>(from, to, msg) {
+public:
+    JokeMail(const char *from, const char *to, const char *msg) : Mailer<JokeMail>(from, to, msg)
+    {
     }
 };
 
-auto main() -> int {
+auto main() -> int
+{
 
     WorkMail mail1("Dmitriy V Dzuuba", "Bill Gates", "What's up?");
     JokeMail mail2("Dmitriy V Dzuuba", "Bill Gates", "What's up?");
@@ -92,4 +100,3 @@ auto main() -> int {
 
     return 0;
 }
-
